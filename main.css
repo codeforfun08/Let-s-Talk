@@ -8,3 +8,10 @@
 .btn{
     border-radius: 100px !important;
 }
+video {
+    width: 40vw;
+    height: 30vw;
+    margin: 2rem;
+    background: #000;
+}
+  

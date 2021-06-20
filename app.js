@@ -10,6 +10,7 @@ mycam=document.getElementById("mycam");
 pertnercam=document.getElementById("partnercam");
 call=document.getElementById("call");
 calldetails=document.getElementById("calldetails");
+mute=document.getElementById("mute");
 answer=document.getElementById("answer");
 hangup=document.getElementById("hangup");
 let mydevice=null;
@@ -28,12 +29,12 @@ const servers = {
 const peerConnection = new RTCPeerConnection(servers);
 
 startcam.onclick = async () => {
-    console.log("hehe")
     mydevice = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
     partnerdevice = new MediaStream();
-  
+
     // Push tracks from local stream to peer connection
     mydevice.getTracks().forEach((track) => {
+
       peerConnection.addTrack(track, mydevice);
     });
   
@@ -96,7 +97,7 @@ call.onclick = async () => {
         }
       });
     });
-  
+    mute.disabled=false;
     hangup.disabled = false;
   };    
   
@@ -135,6 +136,16 @@ call.onclick = async () => {
         }
       });
     });
+    mute.disabled=false;s
+    hangup.disabled = false;
   };
-
+  //Funtion to mute audio
+  mute.onclick = function(){
+    mydevice.getAudioTracks()[0].enabled=!mydevice.getAudioTracks()[0].enabled;
+   
+  }
+  //Funtion to hang up the call
+hangup.onclick=function(){
+  document.location.reload();
+}
 

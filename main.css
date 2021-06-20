@@ -1,0 +1,10 @@
+.btn-primary {
+    background-color: #24b6d3 !important;
+    border: #24b6d3 !important;
+    border-width: 1px !important;
+    border-radius: 100px !important;
+    margin-bottom: 10px;
+}
+.btn{
+    border-radius: 100px !important;
+}

@@ -136,7 +136,7 @@ call.onclick = async () => {
         }
       });
     });
-    mute.disabled=false;s
+    mute.disabled=false;
     hangup.disabled = false;
   };
   //Funtion to mute audio

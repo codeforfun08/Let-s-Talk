@@ -142,7 +142,9 @@ call.onclick = async () => {
   //Funtion to mute audio
   mute.onclick = function(){
     mydevice.getAudioTracks()[0].enabled=!mydevice.getAudioTracks()[0].enabled;
-   
+    mute.innerHTML=(mute.innerHTML=="Mute")?"Unmute":"Mute";
+    
+
   }
   //Funtion to hang up the call
 hangup.onclick=function(){
